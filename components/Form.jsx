@@ -24,17 +24,19 @@ const Form = () => {
   const dispatch = useDispatch()
 
   // Initial values for the form
+
   const initialFormData = {
-    userName: "Yair",
-    phoneNumber: "1234567890",
-    password: "qweQWE!!!",
-    confirmPassword: "qweQWE!!!",
+    userName: "",
+    phoneNumber: "",
+    password: "",
+    confirmPassword: "",
   }
+  // for testing
   // const initialFormData = {
-  //   userName: "",
-  //   phoneNumber: "",
-  //   password: "",
-  //   confirmPassword: "",
+  //   userName: "Yair",
+  //   phoneNumber: "1234567890",
+  //   password: "qweQWE!!!",
+  //   confirmPassword: "qweQWE!!!",
   // }
 
   const [formData, setFormData] = useState(initialFormData)
@@ -86,7 +88,6 @@ const Form = () => {
     const { userName, phoneNumber } = formData
 
     try {
-      console.log("baseURL :>> ", baseURL)
       await sendData(`${baseURL}`, { name: userName, phone: phoneNumber })
       setSubmitted(true)
 

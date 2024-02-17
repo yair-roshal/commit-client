@@ -4,9 +4,7 @@ import { baseURL } from "config/constants"
 import { fetchData } from "helpers/api"
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
-  console.log("baseURL :>> ", baseURL)
   const usersData = await fetchData(baseURL)
-  console.log("usersData", usersData)
   return usersData
 })
 
@@ -28,8 +26,6 @@ const userSlice = createSlice({
         state.loadingUsers = true
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
-        console.log("action.payload", action.payload)
-
         state.loadingUsers = false
         state.users = action.payload
       })

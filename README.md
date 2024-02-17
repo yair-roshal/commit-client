@@ -49,6 +49,9 @@ Open your browser and go to http://localhost:3000 to view the app.
 On the first tab, fill out the form with user data and submit it.
 Switch to the second tab to view the collected user data.
 
+This code can be executed in Node.js version 14 and above, as it uses ES6+ syntax and asynchronous functions.
+the project was tested on version v16.7.0
+
 ### Technologies Used
 
 - React
